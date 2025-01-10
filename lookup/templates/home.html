@@ -3,6 +3,19 @@
 {% block content %}
 
 <h1>Hello World, created by Chukwuka</h1>
+<br/>
+
+{% if api %}
+	{% if api == error_msg %}
+		There was an error, please try again...
+	{% else %}
+		Air Quality: {{ api.0.AQI }}<br/>
+		Area: {{ api.0.ReportingArea }}<br/>
+		Category: {{ api.0.Category.Name }}<br/>
+		State: {{ api.0.StateCode }}<br/><br/>
+	{% endif %}
+
+{% endif %}
 
 {% endblock%}
 
