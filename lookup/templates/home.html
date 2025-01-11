@@ -2,17 +2,22 @@
 
 {% block content %}
 
-<h1>Hello World, created by Chukwuka</h1>
+
 <br/>
 
 {% if api %}
 	{% if api == error_msg %}
 		There was an error, please try again...
 	{% else %}
-		Air Quality: {{ api.0.AQI }}<br/>
-		Area: {{ api.0.ReportingArea }}<br/>
-		Category: {{ api.0.Category.Name }}<br/>
-		State: {{ api.0.StateCode }}<br/><br/>
+<div class="{{ category_color }} p-5 rounded-lg m-3 {{ category_color }} ">
+  <h1 class="display-4">{{ api.0.Category.Name }}</h1>
+  <p class="lead">{{ api.0.ReportingArea }} Air Quality: {{ api.0.AQI }}</p>
+  <p>{{ category_description }}</p>
+
+
+</div>
+		
+		
 	{% endif %}
 
 {% endif %}
