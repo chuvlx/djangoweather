@@ -4,6 +4,9 @@
 
 
 <br/>
+{% if zipcode %}
+	<p>{{ zipcode }}</p>
+{% endif %}
 
 {% if api %}
 	{% if api == error_msg %}
